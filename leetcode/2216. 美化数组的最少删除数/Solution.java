@@ -51,6 +51,7 @@
     
 }
 */
+/* 
 class Solution {
     public int minDeletion(int[] nums) {
         List<Integer> list = new ArrayList<>();
@@ -76,3 +77,20 @@ class Solution {
         return count;
     }
 }
+*/
+class Solution {
+
+    public int minDeletion(int[] nums) {
+         int count = 0;
+         int i = 0;
+         while (i < nums.length - 1) {
+             if (nums[i]==nums[i+1]) {
+                 i++;
+             } else {
+                 count++;
+                 i += 2;
+             }
+         }
+         return nums.length-count*2;
+     }
+ }
